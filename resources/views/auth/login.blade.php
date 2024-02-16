@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert - Content Creator Login</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
@@ -14,19 +15,12 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="auth-form-section">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="auth-form-card">
-                <div class="auth-form">
-                    <h2>Login as Content Creator</h2>
-                    <p>Please Login with your registered Email & Created Password!</p>
+                <div class="auth-form d-flex flex-column align-items-center">
+                    <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/website-images/logo.svg') !!}" /></a>
+                    <p class="mb-3">Login as Content Creator</p>
                     @include('layouts.partials.messages')
                     <div class="row">
                         <form method="post" action="{{ route('login.perform') }}" id="Form_Login">
@@ -59,21 +53,12 @@
 
                             <div class="col-md-12">
                                 <div class="form-group text-center">
-                                    <a class="ForgotPassword-text" href="{{ route('admin.forgot.password') }}">Forgot Password?</a>
+                                    <a target="_blank" class="ForgotPassword-text" href="{{ route('admin.forgot.password') }}">Forgot Password?</a>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="auth-foot">
-                    <div class="row">
-                        <!-- <div class="col-md-12">
-                            <div class="form-group">
-                                <p style="font-weight: 600;">Become a Creator?</p>
-                            </div>
-                        </div> -->
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div class="form-group text-center">
                                 <a class="becomeacreator-btn" href="{{ route('register.show') }}">Become a Creator</a>
                             </div>
                         </div>
@@ -123,7 +108,7 @@
                     },
                     password: {
                         required: true,
-                        minlength: 6,
+                        minlength: 8,
                         maxlength: 30,
                     },
                 },

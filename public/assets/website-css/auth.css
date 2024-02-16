@@ -1,5 +1,6 @@
 .auth-form-section {
-    height: calc(100vh);
+    min-height: calc(100vh);
+    max-height: 150vh;
     position: relative;
     background: var(--black);
     background-position: center;
@@ -203,13 +204,12 @@ a.Login-btn {
     box-shadow: 0 4px 28px rgb(168 91 91 / 21%);
 }
 a.becomeacreator-btn {
-    background: var(--brown);
-    color: var(--white);
+    background: var(--graylight);
+    color: var(--black);
     text-transform: uppercase;
     padding: 10px 30px;
     border: none;
     display: inline-block;
     font-size: 14px;
     border-radius: 5px;
-    box-shadow: 0 4px 28px rgb(168 91 91 / 21%);
 }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert Login</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
@@ -18,7 +19,7 @@
         <div class="container d-flex flex-column align-items-center">
             <div class="auth-form-card">
                 <div class="auth-form d-flex flex-column align-items-center">
-                    <a href="#" class="mb-3"><img width="140" height="140" src="{!! assets('assets/website-images/logo.svg') !!}" /></a>
+                    <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/website-images/logo.svg') !!}" /></a>
                     <p class="mb-3">Sign in to continue</p>
                     @include('layouts.partials.messages')
                     <div class="row">

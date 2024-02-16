@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert - Privacy Policy</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
@@ -14,17 +15,10 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="auth-form-section">
-        <div class="container">
-            <div class="auth-form-card">
-                <div class="auth-form">
+        <div class="container d-flex flex-column align-items-center">
+            <div class="auth-form-card" style="width: 80% !important;">
+                <div class="auth-form d-flex flex-column align-items-center">
                     <h2 class="mb-3">Privacy Policy</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates magni laudantium quidem! Nisi sunt non assumenda maiores ullam quis ducimus omnis repudiandae optio corporis qui ad consectetur at maxime delectus voluptatem labore ratione, inventore ex animi? Architecto assumenda illo debitis fugit. Quis, eveniet nulla laboriosam iusto amet cumque quibusdam enim.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam temporibus ducimus odit voluptate, expedita iste autem, harum deleniti illum, accusantium recusandae? Voluptates quas assumenda tempore cumque deleniti repellendus quae amet. Repudiandae aut laudantium delectus provident, numquam ea! Reprehenderit, praesentium deserunt.</p>

@@ -6,6 +6,7 @@
     $currentURL = Route::currentRouteName();
     ?>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> @yield('title', config('app.name'))</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/line-awesome/css/line-awesome.min.css') !!}">

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert - Change Password</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">

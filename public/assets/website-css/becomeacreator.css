@@ -1,24 +1,71 @@
-.becomeacreator-form-section {position: relative; background: url(../website-images/form-bg.png); background-position: center; padding: 1rem 0; }
+.becomeacreator-form-section {position: relative; background: var(--black); background-position: center; padding: 1rem 0; }
 .becomeacreator-form-section:before {content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgb(0 0 0 / 24%); }
-.becomeacreator-form{position: relative;background: rgb(38 19 19 / 90%);padding: 2rem 3rem;}
+.becomeacreator-form{position: relative;background: var(--gray);padding: 2rem 3rem; border-radius: 15px;}
 .becomeacreator-form .form-group {margin-bottom: 1rem; }
 .becomeacreator-form h2 {font-size: 24px; text-align: center; margin: 0; padding: 0; color: var(--white); }
 .becomeacreator-form p {font-size: 14px; text-align: center; margin: 0 0 1rem 0;  color: var(--white); }
 
-
+.becomeacreator-form-card {width: 45% !important;}
 .becomeacreator-form .form-group {margin-bottom: 1rem; }
 .becomeacreator-form .form-group h4 {font-size: 13px; font-weight: 600; margin: 0 0 5px 0; padding: 0; color: var(--white); }
 
-.becomeacreator-form .form-group input.form-control {background:var(--white); border-radius: 5px; font-size: 14px; font-weight: 400; height: auto; padding: 10px; box-shadow:none; outline: 0; width: 100%; display: inline-block; color: #455A64; border: 1px solid #eee; }
-.becomeacreator-form .form-group select.form-control  {background:var(--white); border-radius: 5px; font-size: 14px; font-weight: 400; height: auto; padding: 10px; box-shadow:none; outline: 0; width: 100%; display: inline-block; color: #455A64; border: 1px solid #eee; appearance: revert; }
-.becomeacreator-form .form-group textarea.form-control{background:var(--white); border-radius: 5px; font-size: 14px; font-weight: 400; height: auto; padding: 10px; box-shadow:none; outline: 0; width: 100%; display: inline-block; color: #455A64; border: 1px solid #eee; }
-.becomeacreator-form .form-group .form-control:focus {border: 1px solid var(--white); }
+
+
+.becomeacreator-form .form-group input.form-control {
+   background: var(--gray);
+   border-radius: 5px;
+   font-size: 14px;
+   font-weight: 400;
+   height: auto;
+   padding: 10px;
+   box-shadow: none;
+   outline: 0;
+   width: 100%;
+   display: inline-block;
+   color: #eee;
+   border: 1px solid #3e3c3c;
+}
+
+.becomeacreator-form .form-group select.form-control {
+   background: var(--gray);
+   border-radius: 5px;
+   font-size: 14px;
+   font-weight: 400;
+   height: auto;
+   padding: 10px;
+   box-shadow: none;
+   outline: 0;
+   width: 100%;
+   display: inline-block;
+   color: #eee;
+   border: 1px solid #3e3c3c;
+   appearance: revert;
+}
+
+.becomeacreator-form .form-group textarea.form-control {
+   background: var(--gray);
+   border-radius: 5px;
+   font-size: 14px;
+   font-weight: 400;
+   height: auto;
+   padding: 10px;
+   box-shadow: none;
+   outline: 0;
+   width: 100%;
+   display: inline-block;
+   color: #eee;
+   border: 1px solid #3e3c3c;
+}
+
+.becomeacreator-form .form-group .form-control:focus {
+   border: 1px solid var(--graylight);
+}
 
 .arkradio label {position: relative; display: inline-block; padding: 0 0 0 2.5em; margin-bottom: 0; line-height: 1.7rem; cursor: pointer; font-size: 14px; color: var(--white); }
 .arkradio label::before, .arkradio label::after {position: absolute; top: 0; left: 0; display: block; width: 26px; height: 26px; }
 .arkradio label::before {content: " "; border: 2px solid #e5eaed; -webkit-border-radius: 100%; -moz-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; border-radius: 100%; }
 .arkradio input[type="radio"] {position: absolute; opacity: 0; z-index: -1; margin: 0; }
-.arkradio input[type="radio"] + label::after {content: ""; top: 4px; left: 4px; width: 18px; display: none; height: 18px; position: absolute; border-radius: 100%; background-color: var(--white); }
+.arkradio input[type="radio"] + label::after {content: ""; top: 4px; left: 4px; width: 18px; display: none; height: 18px; position: absolute; border-radius: 100%; background-color: var(--yellow); }
 .arkradio input[type="radio"]:checked + label::before {border-color:var(--white); }
 .arkradio input[type="radio"]:checked + label::after {display: block; }
 
@@ -38,7 +85,17 @@
 
 .becomeacreator-foot {background: rgb(255 255 255 / 83%);padding: 1.5rem;position: relative;text-align:center;}
 .becomeacreator-foot .form-group {margin-bottom: 1rem; }
-button.becomeacreator-btn {background: var(--brown); color: var(--white); text-transform: uppercase; padding: 10px 30px; border: none; display: inline-block; font-size: 14px; border-radius: 5px; box-shadow: 0 4px 28px rgb(168 91 91 / 21%); }
+button.becomeacreator-btn {
+   background: var(--yellowbtn);
+   color: var(--white);
+   text-transform: uppercase;
+   padding: 10px 30px;
+   border: none;
+   display: inline-block;
+   font-size: 14px;
+   border-radius: 5px;
+   font-weight: 600;
+}
 
 a.becomeacreator-btn {background: var(--brown); color: var(--white); text-transform: uppercase; padding: 10px 30px; border: none; display: inline-block; font-size: 14px; border-radius: 5px; box-shadow: 0 4px 28px rgb(168 91 91 / 21%); }
 

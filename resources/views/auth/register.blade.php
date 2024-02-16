@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert - Content Creator Registration</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
@@ -14,27 +15,18 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="becomeacreator-form-section">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="becomeacreator-form-card">
                 <form method="post" action="{{ route('register.perform') }}" id="register_form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <input type="hidden" name="role" value="2" />
                     <input type="hidden" name="status" value="0" />
-                    <div class="becomeacreator-form">
-                        <h2>PERMANENT MAKEUP TRAINING</h2>
-                        <p>Create skills for your new career at Arkansas Permanent Cosmetics Institute, a school that
-                            truly
-                            cares.</p>
+                    <div class="becomeacreator-form d-flex flex-column align-items-center">
+                        <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/website-images/logo.svg') !!}" /></a>
+                        <p>Register as Content Creator</p>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="first_name" placeholder="First Name">
                                     @if ($errors->has('first_name'))
@@ -42,7 +34,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                                     @if ($errors->has('last_name'))
@@ -81,7 +73,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" placeholder="Create Password" required>
                                     @if ($errors->has('password'))
@@ -89,7 +81,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="password_confirmation" placeholder="Confirm New Password" required>
                                     @if ($errors->has('password_confirmation'))
@@ -125,13 +117,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="becomeacreator-foot">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    {{-- <button class="becomeacreator-btn" data-bs-toggle="modal"
-									data-bs-target="#becomeacreator">Become a Creator</button> --}}
+                                <div class="form-group text-center">
                                     <button class="becomeacreator-btn" type="submit">Become a Creator</button>
                                 </div>
                             </div>
@@ -230,7 +218,7 @@
                 },
                 password: {
                     required: true,
-                    minlength: 6,
+                    minlength: 8,
                     maxlength: 30,
                     AtLeastOnenumber: true,
                     AtLeastOneUpperChar: true,

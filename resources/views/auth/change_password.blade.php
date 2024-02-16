@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{!! assets('assets/website-images/logo.svg') !!}">
     <title>Track Cert - Change Password</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
@@ -14,19 +15,12 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="auth-form-section">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="auth-form-card">
-                <div class="auth-form">
-                    <h2>Change Password</h2>
-                    <p>Please enter your New Password</p>
+                <div class="auth-form d-flex flex-column align-items-center">
+                    <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/website-images/logo.svg') !!}" /></a>
+                    <p>Change Password</p>
                     @include('layouts.partials.messages')
                     <div class="row">
                         <form method="post" action="{{ route('admin.change_password_update') }}" id="Form_Login">
@@ -53,7 +47,6 @@
 
                             <div class="col-md-12">
                                 <div class="form-group text-center">
-                                    <a class="becomeacreator-btn" href="{{ route('login') }}">Cancel</a>
                                     <button class="becomeacreator-btn" type="submit" id="LoginCheck">Submit</button>
                                 </div>
                             </div>
