@@ -214,24 +214,24 @@
             },
             legend: {
                 markers: {
-                    fillColors: ['#e0b220']
+                    fillColors: ['#f28520']
                 }
             },
             tooltip: {
                 marker: {
-                    fillColors: ['#e0b220'],
+                    fillColors: ['#f28520'],
                 },
 
             },
             stroke: {
                 curve: 'smooth',
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             fill: {
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             markers: {
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             xaxis: {
                 axisBorder: {
@@ -295,24 +295,24 @@
             },
             legend: {
                 markers: {
-                    fillColors: ['#e0b220']
+                    fillColors: ['#f28520']
                 }
             },
             tooltip: {
                 marker: {
-                    fillColors: ['#e0b220'],
+                    fillColors: ['#f28520'],
                 },
 
             },
             stroke: {
                 curve: 'smooth',
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             fill: {
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             markers: {
-                colors: ['#e0b220']
+                colors: ['#f28520']
             },
             xaxis: {
                 axisBorder: {
