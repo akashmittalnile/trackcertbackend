@@ -81,10 +81,10 @@
                                         <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
                                             <img style="border-radius: 50%; object-fit: cover; object-position: center;" src="{{ assets('assets/website-images/user.jpg') }}" alt="avatar" class="d-flex align-self-center me-3" width="60" height="60" id="userAvatar">
                                             <input type="text" class="form-control form-control-lg border ms-3" id="message-input" placeholder="Type message">
-                                            <a class="fs-24 ms-3 text-muted" id="image-attach" href="#!" style="color: #3e3c3c !important;"><i class="las la-paperclip"></i></a>
+                                            <a class="fs-24 ms-3 text-muted" id="image-attach" href="javascript:void(0)" style="color: #3e3c3c !important;"><i class="las la-paperclip"></i></a>
                                             <input type="file" hidden accept="image/png, image/jpg, image/jpeg" id="upload-file" name="image-attachment">
                                             <!-- <a class="fs-24 ms-3 text-muted" href="#!"><i class="las la-smile"></i></a> -->
-                                            <a class="fs-24 ms-3" href="#!" style="color: #3e3c3c;"><i class="las la-paper-plane btnSend"></i></a>
+                                            <a class="fs-24 ms-3" href="javascript:void(0)" style="color: #3e3c3c;"><i class="las la-paper-plane btnSend"></i></a>
                                         </div>
 
                                     </div>

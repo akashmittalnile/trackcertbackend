@@ -11,24 +11,24 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <div class="card" id="chat3" style="border-radius: 15px;">
+                        <div class="card" id="chat3" style="border-radius: 15px; background-color: #1e1e1e;"">
                             <div class="card-body">
 
                                 <div class="row">
-                                    <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+                                    <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0" style="border-right: 2px solid #3e3c3c;">
 
                                         <div class="p-3">
 
                                             <div class="input-group rounded mb-3">
                                                 <input type="text" class="form-control rounded border me-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon" id="myinput"/>
-                                                <span class="input-group-text border-0" id="search-addon" style="background: #E0B220;">
+                                                <span class="input-group-text border-0" id="search-addon" style="background: #f28520;">
                                                     <i class="las la-search"></i>
                                                 </span>
                                             </div>
 
-                                            <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; overflow-y: scroll;">
+                                            <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; overflow-y: hidden;">
                                                 <ul class="list-unstyled mb-0">
-                                                    <li class="p-2 border-bottom user-info">
+                                                    <li class="p-2 user-info" style="border-bottom: 2px solid #3e3c3c;">
                                                         <a href="javascript:void(0)" class="d-flex justify-content-between">
                                                             <div class="d-flex flex-row">
                                                                 <div>
@@ -40,8 +40,8 @@
                                                                     <span class="badge bg-success badge-dot"></span>
                                                                 </div>
                                                                 <div class="pt-1">
-                                                                    <p class="chat-name fw-bold mb-0" style="color: #E0B220; font-size: 0.8rem;">{{ $user->first_name ?? "NA" }} {{ $user->last_name }}</p>
-                                                                    <!-- <p class="small text-muted">Hello, Track Cert</p> -->
+                                                                    <p class="chat-name fw-bold mb-0" style="color: #f28520; font-size: 0.8rem;">{{ $user->first_name ?? "NA" }} {{ $user->last_name }}</p>
+                                                                    <p class="small text-muted"></p>
                                                                 </div>
                                                             </div>
                                                             <div class="pt-1">
@@ -51,7 +51,7 @@
                                                         </a>
                                                     </li>
 
-                                                    <div class="no-record-found d-flex flex-column align-items-center justify-content-center mt-5 d-none" id="no_record_found">
+                                                    <div class="d-flex flex-column align-items-center justify-content-center mt-5 no-record-found d-none" id="no_record_found">
                                                         <div>
                                                             <img src="{{ assets('/assets/website-images/nodata.svg') }}" alt="">
                                                         </div>
@@ -81,10 +81,10 @@
                                             <img style="border-radius: 50%;" src="{{ assets('assets/website-images/user.jpg') }}" alt="avatar" class="d-flex align-self-center me-3" width="60" id="userAvatar">
                                             @endif
                                             <input type="text" class="form-control form-control-lg border ms-3" id="message-input" placeholder="Type message">
-                                            <a class="fs-24 ms-3 text-muted" id="image-attach" href="#!"><i class="las la-paperclip"></i></a>
+                                            <a class="fs-24 ms-3 text-muted" id="image-attach" href="javascript:void(0)" style="color: #3e3c3c !important;"><i class="las la-paperclip"></i></a>
                                             <input type="file" hidden accept="image/png, image/jpg, image/jpeg" id="upload-file" name="image-attachment">
                                             <!-- <a class="fs-24 ms-3 text-muted" href="#!"><i class="las la-smile"></i></a> -->
-                                            <a class="fs-24 ms-3" href="#!"><i class="las la-paper-plane btnSend"></i></a>
+                                            <a class="fs-24 ms-3" href="javascript:void(0)" style="color: #3e3c3c;"><i class="las la-paper-plane btnSend"></i></a>
                                         </div>
 
                                     </div>
@@ -268,7 +268,7 @@
     });
 
     function showAllMessages(list, ajax_call = false) {
-        $('.messages-card').html('<div style="margin-top: 25%; font-size: 1rem;" class="d-flex align-items-center justify-content-center">No messages found</div>');
+        $('.messages-card').html('<div style="margin-top: 25%; font-size: 1rem; color: #3e3c3c;" class="d-flex align-items-center justify-content-center">No messages found</div>');
         if (list.length == 0) return false;
         let html = `${list.map(row => admin(row,ajax_call)).join('')}`;
         $('.messages-card').html(html);
