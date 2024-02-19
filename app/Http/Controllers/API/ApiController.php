@@ -1479,17 +1479,22 @@ class ApiController extends Controller
                 $review = Review::where('object_id', $object_id)->where('object_type', $object_type)->get();
                 if (count($review) > 0) {
                     $data = [];
+                    $avgRating = 0;
                     foreach ($review as $key => $c) {
+                        $avgRating += $c->rating;
                         $data[$key] = $c->toArray();
                         $data[$key]['review'] = $c->review;
                         $user_name = User::where('id', $c->userid)->first();
                         $data[$key]['user_name'] = $user_name->first_name . ' ' . $user_name->last_name;
                         $data[$key]['profile_image'] = (isset($user_name->profile_image) && ($user_name->profile_image!="")) ? uploadAssets('upload/profile-image/' . $user_name->profile_image) : null;
                     }
+                    $avgRating = $avgRating/count($data);
                     return response()->json([
                         "status" => true,
                         "message" => "Review List",
-                        "review_list" => $data
+                        "review_list" => $data,
+                        "review_count" => count($data),
+                        "avg_rating" => number_format((float)$avgRating, 2, '.', ''),
                     ]);
                 } else {
                     return response()->json(['status' => false, 'message' => 'No data found', 'review_list' => []]);
@@ -1881,7 +1886,7 @@ class ApiController extends Controller
                 }
                 $orders = OrderDetail::leftJoin('orders as o', 'o.id', '=', 'order_product_detail.order_id')->where('order_product_detail.product_type', $request->type)->where('o.user_id', $user_id);
                 if($request->type == 1){
-                    $orders->leftJoin('course as c', 'c.id', '=', 'order_product_detail.product_id')->leftJoin('category as cat', 'cat.id', '=', 'c.category_id')->select('o.id as order_id', 'o.order_number', 'o.total_amount_paid', 'o.status as order_status', 'o.created_date as order_date', 'c.title as title', 'c.description as desc', 'c.course_fee as price', 'c.admin_id as added_by', 'c.valid_upto', 'c.id as id', 'c.introduction_image', 'cat.name as catname', 'c.category_id as catid', 'order_product_detail.id as itemid', 'o.taxes', 'order_product_detail.order_status as order_pro_status');
+                    $orders->leftJoin('course as c', 'c.id', '=', 'order_product_detail.product_id')->leftJoin('users as u', 'u.id', '=', 'c.admin_id')->leftJoin('category as cat', 'cat.id', '=', 'c.category_id')->select('o.id as order_id', 'o.order_number', 'o.total_amount_paid', 'o.status as order_status', 'o.created_date as order_date', 'c.title as title', 'c.description as desc', 'c.course_fee as price', 'c.admin_id as added_by', 'c.valid_upto', 'c.id as id', 'c.introduction_image', 'cat.name as catname', 'c.category_id as catid', 'order_product_detail.id as itemid', 'o.taxes', 'order_product_detail.order_status as order_pro_status');
                     if($request->filled('title')){
                         $orders->where('c.title', 'like', '%' . $request->title . '%');
                     }
@@ -1891,6 +1896,12 @@ class ApiController extends Controller
                 }
                 if($request->filled('start_date')){ 
                     $orders->whereDate('o.created_date','>=',$request->start_date);   
+                }
+                if($request->filled('order_no')){ 
+                    $orders->where('o.order_number','like', '%' . $request->order_no . '%');   
+                }
+                if($request->filled('name')){ 
+                    $orders->whereRaw("concat(u.first_name, ' ', u.last_name) like '%$request->name%' ");   
                 }
                 if($request->filled('end_date')){
                     $orders->whereDate('o.created_date','<=',$request->end_date);   

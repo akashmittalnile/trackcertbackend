@@ -27,12 +27,12 @@
                         </div>
                         <div class="col-md-1">
                             <div class="form-group">
-                                <a class="Create-btn" style="padding: 12px 0px;" href="{{ route('Home.students') }}"><i class="las la-sync"></i></a>
+                                <a class="Accountapproval-btn" style="padding: 13px 20px;" href="{{ route('Home.students') }}"><i class="las la-sync"></i></a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <button class="Create-btn" style="padding: 12px 0px;" type="submit">Search</button>
+                                <button class="Accountapproval-btn" type="">Search</button>
                             </div>
                         </div>
                     </div>

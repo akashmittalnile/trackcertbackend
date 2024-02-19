@@ -19,7 +19,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <select class="form-control" name="status">
-                                    <option @if(request()->status == '') selected @endif value="">Select Course Type</option>
+                                    <option @if(request()->status == '') selected @endif value="">Select course type</option>
                                     <option @if(request()->status == '1') selected @endif value="1">Published</option>
                                     <option @if(request()->status == '0') selected @endif value="0">Unpublished</option>
                                 </select>
@@ -27,17 +27,17 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <button class="add-more py-2" type="">Search</button>
+                                <button class="add-more py-2" style="padding: 13px 40px;" type="">Search</button>
                             </div>
                         </div>
                         <div class="col-md-1">
                             <div class="form-group">
-                                <a href="{{ route('home.index') }}" style="padding: 12px 0px;" class="newcourse-btn"><i class="las la-sync"></i></a>
+                                <a href="{{ route('home.index') }}" style="padding: 13px 0px;" class="newcourse-btn"><i class="las la-sync"></i></a>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <a class="newcourse-btn" href="{{ route('Home.Addcourse') }}">Create New Course</a>
+                                <a class="newcourse-btn" style="padding: 14px 0px;" href="{{ route('Home.Addcourse') }}">Create New Course</a>
                             </div>
                         </div>
                     </div>

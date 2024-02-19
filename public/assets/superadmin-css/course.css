@@ -116,7 +116,7 @@ a.add-more {background: var(--yellowbtn); color: var(--white); text-transform: u
   
 
 
-.upload-signature label {width: 100%; border: 1px dashed var(--white); border-radius: 5px; padding: 10px; color: var(--white); text-align: center; font-size: 14px; }
+.upload-signature label {width: 100%; border: 1px dashed var(--inputline); border-radius: 5px; padding: 10px; color: var(--white); text-align: center; font-size: 14px; }
 .addsignature {width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1; }
 .addsignature:focus + label, .addsignature.has-focus + label, 
 .addsignature + label:hover {color:var(--yellow) #E0B220; }
