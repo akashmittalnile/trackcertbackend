@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('logout.perform') }}" class="nav-item nav-link">
+                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#openLogoutModal" class="nav-item nav-link">
                             <span class="menu-icon"><i class="las la-tachometer-alt"></i></span>
                             <span class="menu-title">Logout</span>
                         </a>

@@ -322,3 +322,13 @@ ul.pagination li.disabled a.page-link {color:var(--white);pointer-events: none;b
    margin: 0;
 
 }
+
+.ro-modal .modal-header {border: none; text-align: center; justify-content: center; }
+.ro-modal .modal-body h2 { font-size: 22px; font-weight: bold; color: var(--white); text-align: center; margin: 0 0 1rem 0; padding: 0;}
+.ro-modal .modal-body p { font-size: 15px; font-weight: bold; color: var(--white); text-align: center; }
+.ro-modal h5.modal-title {margin: 0; padding: 0; font-size: 20px; font-weight: bold; color: #6c7383; text-align: center;}
+.ro-modal .modal-content {border: none; background:var(--gray); border-radius: 8px; padding: 1rem;}
+.ro-modal button.close {position: absolute; right: 10px; top: 10px;    z-index: 1;background: #F75013;width: 30px;height: 30px;border-radius: 50px;border: none;color: #fff;font-size: 24px;}
+
+.cancel-btn{border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;  border: none;display: inline-block; position: relative; outline: none; }
+.save-btn{border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; }

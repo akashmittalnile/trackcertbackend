@@ -80,7 +80,7 @@
                         <a href="{{ route('Home.my.account') }}" class="dropdown-item">
                             <i class="las la-user"></i> Profile
                         </a>
-                        <a href="{{ route('logout.perform') }}" class="dropdown-item">
+                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#openLogoutModal" class="dropdown-item">
                             <i class="las la-sign-out-alt"></i> Logout
                         </a>
                     </div>
@@ -95,6 +95,30 @@
             <span class="icon-menu"></span>
         </button>
     </nav>
+
+    <div class="modal ro-modal fade" id="openLogoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="PaymentRequest-form-info text-center">
+                        <h2 class="m-0">Are You Sure?</h2>
+                        <p>You want to logout!</p>
+                        <form action="{{ route('logout.perform') }}" method="get">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
+                                        <button type="submit" class="save-btn">Yes! Logout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $(document).on('click', '#trigger-unseen', function(){

@@ -137,7 +137,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
-                                    <button class="save-btn" type="submit">Save</button>
+                                    <button class="save-btn" type="submit">Create</button>
                                 </div>
                             </div>
                         </form>

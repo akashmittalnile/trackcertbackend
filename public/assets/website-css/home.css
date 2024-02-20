@@ -188,27 +188,31 @@ a.add-answer {cursor:pointer; font-weight: 600; position: relative; background: 
 
 
 
-.pmu-course-details-item {position: relative; background: var(--white); border-radius: 10px; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.05); margin-bottom: 1rem; display: flex; padding: 10px; }
+.pmu-course-details-item {position: relative; background: var(--gray); border-radius: 10px; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.05); margin-bottom: 1rem; display: flex; padding: 10px; }
 .pmu-course-details-media {width: 300px; height: 215px; position: relative; overflow: hidden; border-radius: 10px; }
 .pmu-course-details-media img {width: 100%; height: 100%; object-fit: cover; }
 .pmu-video-icon {position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; background: rgb(0 0 0 / 30%); display: flex; align-items: center; }
 
 .pmu-video-icon img{width: 42px;height:42px;margin: auto;}
 .pmu-course-details-content{padding: 1rem; }
-.pmu-course-details-content h2{color: var(--lightblack, #6A6A6A);font-size: 18px;font-style: normal;font-weight: 500;line-height: 22px;margin: 0 0 10px 0;padding: 0;}
-.pmu-course-details-content p{color: var(--lightblack, #6A6A6A);font-size: 14px;font-style: normal;font-weight: 400;line-height: 24px;text-align: justify;}
+.pmu-course-details-content h2{color: var(--white, #6A6A6A);font-size: 18px;font-style: normal;font-weight: 500;line-height: 22px;margin: 0 0 10px 0;padding: 0;}
+.pmu-course-details-content p{color: var(--white, #6A6A6A);font-size: 14px;font-style: normal;font-weight: 400;line-height: 24px;text-align: justify;}
 .coursestatus {background: var(--yellow);color: var(--white);display: inline-block;padding: 8px 10px;border-radius: 5px;line-height: normal;margin-bottom: 10px;}
 .coursestatus img {margin-right: 5px; vertical-align: text-bottom; }
-.pmu-course-details-price{color: var(--yellow, #E0B220);font-size: 18px;font-style: normal;font-weight: 700;line-height: 100%;}
+.pmu-course-details-price{color: var(--white, #E0B220);font-size: 18px;font-style: normal;font-weight: 700;line-height: 100%;}
 
 .pmu-course-details-Chapter{margin-bottom: 1rem;}
 
 .pmu-course-details-heading {margin-bottom: 10px;}
 .pmu-course-details-heading h2{font-size: 18px; margin: 0; padding: 0; color: var(--black); }
 
+.course-tag h3{
+    color: var(--white, #6A6A6A);font-size: 18px;font-style: normal;font-weight: 500;line-height: 22px;margin: 0 0 10px 0;padding: 0;
+}
+
 
 .pmu-comment-box-head{margin-bottom: 1rem;display: flex;justify-content: space-between;align-items: center;}
-.pmu-comment-box-head h1 {font-size: 18px; margin: 0; padding: 0; color: var(--black); }
+.pmu-comment-box-head h1 {font-size: 18px; margin: 0; padding: 0; color: var(--white); }
 a.addcomment-btn {border-radius: 5px; background: var(--brown, #261313); box-shadow: 0px 4px 12px 0px rgba(182, 0, 248, 0.06); padding: 12px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase; width: 100%; display: inline-block; position: relative; outline: none; }
 
 .pmu-comment-item {display: flex; padding: 1rem; border-bottom: 2px solid var(--yellow); position: relative; background: var(--white); border-radius: 10px; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.05); margin-bottom: 1rem; }
@@ -250,10 +254,6 @@ a.edit-icon-btn {border-radius: 50px; margin-right:10px;background: var(--brown,
    modal      
 ----------------------------*/
 
-.ro-modal .modal-header {border: none; text-align: center; justify-content: center; }
-.ro-modal h5.modal-title {margin: 0; padding: 0; font-size: 20px; font-weight: bold; color:var(--black); text-align: center;}
-.ro-modal .modal-content {border: none; background:var(--white); border-radius: 0px; }
-.ro-modal button.close {position: absolute; right: 10px; top: 10px;    z-index: 1;background: #F75013;width: 30px;height: 30px;border-radius: 50px;border: none;color: #fff;font-size: 24px;}
 
 /*.ro-modal .modal-header {border: none; text-align: center; justify-content: center; }
 .ro-modal h5.modal-title {margin: 0; padding: 0; font-size: 20px; font-weight: bold; color: #6c7383; text-align: center;}
@@ -262,7 +262,7 @@ a.edit-icon-btn {border-radius: 50px; margin-right:10px;background: var(--brown,
 */
 
 
-.becomeacreator-form-info{position: relative; padding: 2rem;}
+.becomeacreator-form-info{position: relative;}
 .becomeacreator-form-info h2 {font-size: 24px; text-align: center; margin: 0; padding: 0; color: var(--black); }
 .becomeacreator-form-info p {font-size: 14px; text-align: center; margin: 0 0 1rem 0;  color: var(--black); }
 
