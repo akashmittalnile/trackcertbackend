@@ -2518,11 +2518,11 @@ class ApiController extends Controller
                 return response()->json(['status' => false, 'message' => $validator->errors()->first()]);
             }else{
                 $id = $request->order_id;
-                $order = Order::where('orders.id', $id)->leftJoin('users as u', 'u.id', '=', 'orders.user_id')->select('orders.total_amount_paid', 'u.first_name', 'u.last_name', 'u.email', 'u.profile_image', 'u.phone', 'u.role', 'u.status as ustatus', 'orders.id', 'orders.order_number', 'orders.created_date', 'orders.status', 'orders.taxes', 'orders.delivery_charges', 'orders.coupon_discount_price', 'orders.amount', DB::raw("orders.amount - orders.coupon_discount_price + orders.taxes as total_amount"))->first();
+                $order = Order::where('orders.id', $id)->leftJoin('users as u', 'u.id', '=', 'orders.user_id')->select('orders.cart_json','orders.order_for','orders.total_amount_paid', 'u.first_name', 'u.last_name', 'u.email', 'u.profile_image', 'u.phone', 'u.role', 'u.status as ustatus', 'orders.id', 'orders.order_number', 'orders.created_date', 'orders.status', 'orders.taxes', 'orders.delivery_charges', 'orders.coupon_discount_price', 'orders.amount', DB::raw("orders.amount - orders.coupon_discount_price + orders.taxes as total_amount"))->first();
 
                 $order->total_amount = number_format((float) $order->total_amount, 2, '.', '');
                 $order->total_amount_paid = number_format((float) $order->total_amount_paid, 2, '.', '');
-                $order->sub_total = number_format((float) $order->amount ?? 0, 2, '.', '');
+                $order->sub_total = number_format((float) $order->amount + $order->coupon_discount_price ?? 0, 2, '.', '');
                 $order->taxes = number_format((float) $order->taxes, 2, '.', '');
                 $order->coupon_discount_price = number_format((float) $order->coupon_discount_price ?? 0, 2, '.', '');
                 $order->created_date = date('d M, Y H:iA', strtotime($order->created_date));
@@ -2533,17 +2533,45 @@ class ApiController extends Controller
 
                 $item = OrderDetail::where('id', $request->item_id)->first();
                 if(isset($item->id)){
+
+                    if($item->product_type == 1){
+                        $isObjectExist = Course::where('id', $item->product_id)->where('status', 1)->first();
+                        if(!isset($isObjectExist)){
+                            return response()->json(['status' => true, 'message' => 'This course is no longer exists.']);
+                        } 
+                    } else {
+                        $isObjectExist = Product::where('id', $item->product_id)->where('status', 1)->first();
+                        if(!isset($isObjectExist)){
+                            return response()->json(['status' => true, 'message' => 'This product is no longer exists.']);
+                        } 
+                    }
+                    
+
+                    $isCourseComplete = UserCourse::where('course_id', $item->product_id)->where('user_id', auth()->user()->id)->where('is_expire', 0)->where('status', 1)->orderByDesc('id')->first();
+                    if(isset($isCourseComplete->id)){
+                        $order->course_completed = 1;
+                        $order->certificate = url('/')."/api/download-pdf/".encrypt_decrypt('encrypt',$isCourseComplete->course_id)."/".encrypt_decrypt('encrypt',auth()->user()->id);
+                    } 
+                    else{
+                        $order->course_completed = 0;
+                        $order->certificate = null;
+                    }
+
                     if($item->product_type == 1){
                         $data = DB::table('course as c')->leftJoin('users as u', 'u.id', '=', 'c.admin_id')->select('u.first_name', 'u.last_name', 'u.profile_image', 'c.title')->where('c.id', $item->product_id)->first();
+                        $data->profile_image = ($data->profile_image!="" && isset($data->profile_image)) ? uploadAssets('upload/profile-image/'.$data->profile_image) : null;
+                    } else {
+                        $data = DB::table('product as p')->leftJoin('users as u', 'u.id', '=', 'p.added_by')->select('u.first_name', 'u.last_name', 'u.profile_image', 'p.name as title')->where('p.id', $item->product_id)->first();
                         $data->profile_image = ($data->profile_image!="" && isset($data->profile_image)) ? uploadAssets('upload/profile-image/'.$data->profile_image) : null;
                     }
                     $order->creator_name = $data;
                 }
 
-                $orderDetails = DB::table('orders')->select(DB::raw("ifnull(c.admin_id, p.added_by) as added_by, ifnull(c.title,p.name) title, order_product_detail.id as itemid, order_product_detail.quantity, order_product_detail.product_id, order_product_detail.product_type, ifnull(c.status,p.status) status, order_product_detail.amount, order_product_detail.admin_amount, ifnull(c.introduction_image,(select attribute_value from product_details pd where p.id = pd.product_id and attribute_code = 'cover_image' limit 1))  as image"))->join('users as u', 'orders.user_id', '=', 'u.id')->join('order_product_detail', 'orders.id', '=', 'order_product_detail.order_id')->leftjoin('course as c', 'c.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 1'))->leftjoin('product as p', 'p.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 2'))->where('orders.id', $id)->get();
+                $orderDetails = DB::table('orders')->select(DB::raw("ifnull(c.admin_id, p.added_by) as added_by, ifnull(c.title,p.name) title, order_product_detail.id as itemid, order_product_detail.quantity, order_product_detail.product_id, order_product_detail.product_type, ifnull(c.status,p.status) status, order_product_detail.amount, order_product_detail.admin_amount, ifnull(c.introduction_image,(select attribute_value from product_details pd where p.id = pd.product_id and attribute_code = 'cover_image' limit 1))  as image, ifnull(c.course_fee, p.sale_price) as actual_amount"))->join('users as u', 'orders.user_id', '=', 'u.id')->join('order_product_detail', 'orders.id', '=', 'order_product_detail.order_id')->leftjoin('course as c', 'c.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 1'))->leftjoin('product as p', 'p.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 2'))->where('orders.id', $id)->get();
 
                 $other_detail = [];
                 foreach($orderDetails as $val){
+                    $val->quantity = $val->quantity ?? 1;
                     $temp['id'] = $val->product_id;
                     $temp['item_id'] = $val->itemid;
                     $temp['is_primary'] = ($val->itemid==$request->item_id) ? true : false;
@@ -2551,7 +2579,7 @@ class ApiController extends Controller
                     $temp['type_name'] = ($val->product_type==1) ? "Course" : "Product";
                     $temp['title'] = $val->title ?? "NA";
                     $temp['status'] = $val->status;
-                    $temp['total_amount_paid'] = $val->amount*$val->quantity;
+                    $temp['total_amount_paid'] = ($val->actual_amount*$val->quantity);
                     $temp['quantity'] = $val->quantity;
                     $temp['admin_fee'] = $val->admin_amount;
                     $temp['video'] = ($val->product_type==1) ? uploadAssets('upload/disclaimers-introduction/'.$val->image) : null;
@@ -2574,7 +2602,14 @@ class ApiController extends Controller
 
                 $invoice = url('/')."/api/download-invoice/".encrypt_decrypt('encrypt', $order->id);
 
-                return response()->json(['status' => true, 'message' => 'Order details', 'data' => $order, 'items' => $other_detail, 'invoice' => $invoice]);
+                $shipping_address = [];
+                $order->cart_json = unserialize($order->cart_json);
+                if(isset($order->cart_json['shipping_address']['address_id'])){
+                    $shipping_address = $order->cart_json['shipping_address'];
+                }
+                $order->cart_json = null;
+
+                return response()->json(['status' => true, 'message' => 'Order details', 'data' => $order, 'items' => $other_detail, 'invoice' => $invoice, 'shipping_address' => $shipping_address]);
             }
         } catch (\Exception $e) {
             return errorMsg("Exception -> " . $e->getMessage());

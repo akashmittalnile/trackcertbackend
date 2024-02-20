@@ -23,7 +23,7 @@ class SuperAdminMiddleware
                 return $next($request);
             }else{
                 Auth::logout();
-                return redirect()->route('SA.LoginShow')->with('success','Access Denied! as you are not a Arkansas Admin');
+                return redirect()->route('SA.LoginShow')->with('success','Access Denied! as you are not a Trackcert Admin');
             }
         }else{
             return redirect()->route('SA.LoginShow')->with('success','Please Login First');
