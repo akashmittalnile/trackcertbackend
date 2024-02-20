@@ -120,7 +120,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group text-center">
-                                    <button class="becomeacreator-btn" type="submit">Become a Creator</button>
+                                    <button class="becomeacreator-btn" type="submit">SIGN UP</button>
                                 </div>
                             </div>
                             <div class="col-md-12">
