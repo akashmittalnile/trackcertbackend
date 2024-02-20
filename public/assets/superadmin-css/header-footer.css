@@ -251,17 +251,23 @@ ul.pagination li.disabled a.page-link {color:var(--white);pointer-events: none;b
 
    margin: 0;
 
-   color: #343a40;
+   color: var(--white);
 
    padding: 0;
 
    font-weight: 600;
 
-}.notification-body {
+}
+.notification-body {
 
    overflow: auto;
 
    height: 260px;
+
+}
+.notification-body .no-data-title{
+
+   color: var(--graylight);
 
 }
 

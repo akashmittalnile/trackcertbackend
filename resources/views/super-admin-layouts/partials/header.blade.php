@@ -28,7 +28,7 @@
                         </div> 
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" data-bs-popper="none">
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" data-bs-popper="none" style="width: 300px !important;">
                         <div class="notification-head">
                             <h2>Notifications</h2>
                         </div>
@@ -57,7 +57,7 @@
                                 <div>
                                     <img src="{{ assets('/assets/website-images/nodata.svg') }}" alt="">
                                 </div>
-                                <div class="font-weight-bold">
+                                <div class="font-weight-bold no-data-title">
                                     <p class="font-weight-bold" style="font-size: 1.2rem;">No notifications found </p> 
                                 </div>
                             </div>
