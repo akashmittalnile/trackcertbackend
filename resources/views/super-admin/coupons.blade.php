@@ -105,7 +105,7 @@
 </div>
 
 <!-- Create Coupon -->
-<div class="modal lm-modal fade" id="CreateCoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="ro-modal modal fade" id="CreateCoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -115,14 +115,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Code <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Code </label>
                                     <input type="text" class="form-control" placeholder="Coupon Code" id="code" name="code">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Available for ? <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Available for ? </label>
                                     <!-- <input type="text" value="Product" class="form-control" name="object_type"> -->
                                     <select class="form-control" name="object_type" style="padding: 13px 10px;">
                                         <option value="">Coupon Available for ?</option>
@@ -133,7 +133,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Type <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Type </label>
                                     <select class="form-control" name="type" id="type_create" style="padding: 13px 10px;">
                                         <option value="">Coupon Type</option>
                                         <option value="2">Percentage</option>
@@ -143,7 +143,7 @@
 
                             <div class="col-md-6" id="course_input">
                                 <div class="form-group">
-                                    <label for="">Course <span class="text-danger">*</span></label>
+                                    <label for="">Course </label>
                                     <select class="form-control" name="course" id="course_create" style="padding: 13px 10px;" required>
                                         <option value="">Select Course</option>
                                         @foreach($course as $val)
@@ -155,7 +155,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Discount Value <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Discount Value </label>
                                     <input type="number" id="amount_create" min="0.1" step="0.01" class="form-control" placeholder="Coupon Discount Amount" name="amount" required>
                                     <span id="note" style="font-weight: 500;"></span>
                                 </div>
@@ -163,7 +163,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Valid Upto <span class="text-danger">*</span></label>
+                                    <label for="">Valid Upto </label>
                                     <input type="date" class="form-control" placeholder="" name="date" min="{{ date('Y-m-d', strtotime('+1days')) }}">
                                 </div>
                             </div>
@@ -176,7 +176,7 @@
                             </div>
 
                             <div class="col-md-12">
-                                <div class="form-group">
+                                <div class="form-group text-center">
                                     <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
                                     <button class="save-btn" type="submit">Submit</button>
                                 </div>
@@ -190,17 +190,17 @@
 </div>
 
 <!-- Edit Coupon -->
-<div class="modal lm-modal fade" id="editCoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="ro-modal modal fade" id="editCoupon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="CreateCoupon-modal-form">
+                <div class="CreateCoupon-modal-form text">
                     <h2>Edit Coupon</h2>
                     <form action="{{ route('SA.Update.Coupon') }}" method="POST" id="editCouponForm">@csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Code <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Code </label>
                                     <input type="text" class="form-control" placeholder="Coupon Code" id="codeEdit" name="code">
                                     <input type="hidden" name="id" id="coupon_id_input" value="">
                                 </div>
@@ -208,7 +208,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Available for ? <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Available for ? </label>
                                     <!-- <input type="text" value="Product" class="form-control" name="object_type"> -->
                                     <select class="form-control" name="object_type" style="padding: 13px 10px;">
                                         <option value="">Coupon Available for ?</option>
@@ -219,7 +219,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Type <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Type </label>
                                     <select class="form-control" name="type" style="padding: 13px 10px;" id="typeEdit">
                                         <option value="">Coupon Type</option>
                                         <option value="2">Percentage</option>
@@ -229,7 +229,7 @@
 
                             <div class="col-md-6" id="course_input_edit">
                                 <div class="form-group">
-                                    <label for="">Course <span class="text-danger">*</span></label>
+                                    <label for="">Course </label>
                                     <select class="form-control" name="course" id="course_edit" style="padding: 13px 10px;" required>
                                         <option value="">Select Course</option>
                                         @foreach($course as $val)
@@ -241,7 +241,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Coupon Discount Value <span class="text-danger">*</span></label>
+                                    <label for="">Coupon Discount Value </label>
                                     <input type="number" min="0.1" step="0.01" id="amountEdit" class="form-control" placeholder="Coupon Discount Amount" name="amount">
                                     <span id="noteEdit" style="font-weight: 500;"></span>
                                 </div>
@@ -249,7 +249,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Valid Upto <span class="text-danger">*</span></label>
+                                    <label for="">Valid Upto </label>
                                     <input type="date" class="form-control" placeholder="" id="dateEdit" name="date" min="{{ date('Y-m-d', strtotime('+1days')) }}">
                                 </div>
                             </div>
@@ -262,7 +262,7 @@
                             </div>
 
                             <div class="col-md-12">
-                                <div class="form-group">
+                                <div class="form-group text-center">
                                     <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
                                     <button class="save-btn" type="submit">Update</button>
                                 </div>

@@ -115,10 +115,11 @@ a.delete-btn {background: var(--yellowbtn);    display: inline-block; border-rad
 
 .CreateCoupon-modal-form h2 {font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; padding: 0; text-align: center; }
 .CreateCoupon-modal-form .form-group{margin-bottom: 1rem;}
-.CreateCoupon-modal-form .form-group select.form-control {background: #fff; border-radius: 5px; font-size: 13px; border: 1px solid #e7e9eb; font-weight: 400; height: auto; padding: 10px 10px; box-shadow: 0 5px 13px rgb(240 240 241 / 46%); outline: 0; width: 100%; display: inline-block; color: #455A64; appearance: revert; }
-.CreateCoupon-modal-form .form-group input.form-control {background: #fff; border-radius: 5px; font-size: 13px; border: 1px solid #e7e9eb; font-weight: 400; height: auto; padding: 10px 10px; box-shadow: 0 5px 13px rgb(240 240 241 / 46%); outline: 0; width: 100%; display: inline-block; color: #455A64; }
-.CreateCoupon-modal-form .form-group textarea.form-control {background: #fff; border-radius: 5px; font-size: 13px; border: 1px solid #e7e9eb; font-weight: 400; height: auto; padding: 10px 10px; box-shadow: 0 5px 13px rgb(240 240 241 / 46%); outline: 0; width: 100%; display: inline-block; color: #455A64; }
-.CreateCoupon-modal-form .form-group .form-control:focus {border: 1px solid #4a95cf; } 
+.CreateCoupon-modal-form .form-group label{color: var(--white);}
+.CreateCoupon-modal-form .form-group select.form-control {background: var(--gray); border-radius: 5px; font-size: 13px; border: 1px solid var(--inputline); font-weight: 400; height: auto; padding: 10px 10px; outline: 0; width: 100%; display: inline-block; color: var(--white); appearance: revert; }
+.CreateCoupon-modal-form .form-group input.form-control {background: var(--gray); border-radius: 5px; font-size: 13px; border: 1px solid var(--inputline); font-weight: 400; height: auto; padding: 10px 10px; outline: 0; width: 100%; display: inline-block; color: var(--white); }
+.CreateCoupon-modal-form .form-group textarea.form-control {background: var(--gray); border-radius: 5px; font-size: 13px; border: 1px solid var(--inputline); font-weight: 400; height: auto; padding: 10px 10px; outline: 0; width: 100%; display: inline-block; color: var(--white); }
+.CreateCoupon-modal-form .form-group .form-control:focus {border: 1px solid var(--white); } 
 .cancel-btn{border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;  border: none;display: inline-block; position: relative; outline: none; }
 .save-btn{border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; }
 

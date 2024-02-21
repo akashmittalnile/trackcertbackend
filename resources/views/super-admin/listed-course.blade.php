@@ -17,15 +17,12 @@
                             </div>
                             @endif
                         </div>
-                        @if($user->status == 3)
                         <div class="col-md-6">
                             <div class="form-group">
                                 <a style="background: #f28520" class="newcourse-btn"
-                                    href="{{ url('super-admin/update-approval-request/' . encrypt_decrypt('encrypt', $user->id) . '/' . encrypt_decrypt('encrypt', 1)) }}"><i
-                                        class="las la-check-circle"></i> Approve request</a>
+                                    href="{{ url('super-admin/update-approval-request/' . encrypt_decrypt('encrypt', $user->id) . '/' . encrypt_decrypt('encrypt', 1)) }}"><i class="las la-check-circle"></i> Approve request</a>
                             </div>
                         </div>
-                        @endif
                     @else
                         <div class="col-md-5">
                             <div class="form-group">
