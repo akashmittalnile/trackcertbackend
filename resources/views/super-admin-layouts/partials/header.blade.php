@@ -47,7 +47,7 @@
                                     @endif
                                     <div class="notification-item-text">
                                         <h2>{{ $val->title ?? "NA" }}</h2>
-                                        <p style="color: #e0b220;">{{ $val->message ?? "NA" }}</p>
+                                        <p>{{ $val->message ?? "NA" }}</p>
                                         <p><span><i class="fas fa-clock"></i>{{ date('d M, Y H:i A') }}</span></p>
                                     </div>
                                 </div>

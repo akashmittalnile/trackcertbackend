@@ -374,7 +374,7 @@
     $(function() {
         var options1 = {
             series: [{
-                name: "Revenew",
+                name: "Revenue",
                 data: dataOverRevenue,
             }, ],
             chart: {

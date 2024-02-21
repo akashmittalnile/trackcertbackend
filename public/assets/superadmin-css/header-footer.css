@@ -331,6 +331,8 @@ ul.pagination li.disabled a.page-link {color:var(--white);pointer-events: none;b
 
    font-size: 14px;
 
+   color: var(--yellowbtn);
+
    margin: 0 0 10px 0;color: #343a40;
 
    padding: 0;
