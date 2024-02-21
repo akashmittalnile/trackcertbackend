@@ -2622,13 +2622,22 @@ class ApiController extends Controller
             $order = Order::where('orders.id', $id)->leftJoin('users as u', 'u.id', '=', 'orders.user_id')->select('u.first_name', 'u.last_name', 'u.email', 'u.profile_image', 'u.phone', 'u.role', 'u.status as ustatus', 'orders.id', 'orders.order_number', 'orders.created_date', 'orders.status')->first();
 
             $orderDetails = DB::table('orders')->select(DB::raw("ifnull(c.title,p.name) title, order_product_detail.product_id, order_product_detail.product_type, ifnull(c.status,p.status) status, order_product_detail.amount, order_product_detail.admin_amount, ifnull(c.introduction_image,(select attribute_value from product_details pd where p.id = pd.product_id and attribute_code = 'cover_image' limit 1))  as image"))->join('users as u', 'orders.user_id', '=', 'u.id')->join('order_product_detail', 'orders.id', '=', 'order_product_detail.order_id')->leftjoin('course as c', 'c.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 1'))->leftjoin('product as p', 'p.id','=', DB::raw('order_product_detail.product_id AND order_product_detail.product_type = 2'))->where('orders.id', $id)->get();
-            
-            $pdf = PDF::loadView('home.pdf-invoice', compact('order', 'orderDetails'), [], [ 
-                'mode' => 'utf-8',
-                'title' => 'Order Invoice',
-                'format' => 'Legal',
+
+            $html = view('home.pdf-invoice', compact('order', 'orderDetails'))->render();
+
+            $mpdf = new \Mpdf\Mpdf([
+                'format'=> 'A4',
+                'orientation' => 'P',
+                'mode' => 'utf-8'
             ]);
-            return $pdf->stream($order->order_number.'-invoice.pdf');
+            $mpdf->img_dpi = 6;
+            $mpdf->imageVars['myvariable'] = '';
+            // $mpdf->showImageErrors = true;
+            $mpdf->SetDisplayMode('fullpage');
+            $mpdf->list_indent_first_level = 0; 
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+            
         } catch (\Exception $e) {
             return errorMsg("Exception -> " . $e->getMessage());
         }

@@ -598,7 +598,7 @@ class CartController extends Controller
             $user_id = auth()->user()->id;
             if ($user_id) {
                 $carts = Addtocart::where('userid', $user_id)->get();
-                $order_no = "AKS".rand(1000000000, 9999999999);
+                $order_no = "TRACK".rand(1000000000, 9999999999);
                 
                 
                 if (count($carts) > 0) {
