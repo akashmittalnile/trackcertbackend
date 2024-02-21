@@ -162,11 +162,12 @@
         a:hover{
             color: #fff;
         }
-        .select2-container--default .select2-selection--multiple{ border: none !important; }
     </style>
 
     <!-- Include jQuery Validation -->
     <script>
+        $(".select2-container .selection .select2-selection .select2-search__field").addClass('form-control');
+        $(".select2-search__field.form-control").css('border', 'none');
         $(document).ready(function() {
             $(".select2-search__field.form-control").css('border', 'none');
 

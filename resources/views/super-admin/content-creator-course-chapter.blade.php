@@ -783,7 +783,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button class="cancel-btn mx-2" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
-                                        <button class="save-btn" type="submit">Save</button>
+                                        <button class="save-btn" type="submit">Add Chapter</button>
                                     </div>
                                 </div>
                             </form>
@@ -811,7 +811,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button class="cancel-btn mx-2" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
-                                        <button class="save-btn" type="submit">Save</button>
+                                        <button class="save-btn" type="submit">Edit Chapter</button>
                                     </div>
                                 </div>
                             </form>
