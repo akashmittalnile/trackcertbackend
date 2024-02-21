@@ -310,13 +310,12 @@
                         @endif
 
                         <div class="becomeacreator-btn-action">
+                            <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                             @if ($user->status == 1)
                                 <a href="{{ url('super-admin/inactive/'.encrypt_decrypt('encrypt',$user->id))}}" class="save-btn">Yes! Inactive</a>
                             @elseif ($user->status == 2)
                                 <a href="{{ url('super-admin/inactive/'.encrypt_decrypt('encrypt',$user->id))}}" class="save-btn">Yes! Active</a>
                             @endif
-                            <button class="cancel-btn" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                            
                         </div>
                     </div>
                 </div>
@@ -429,8 +428,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="PaymentRequest-form-info">
+                    <div class="PaymentRequest-form-info text-center">
                         <h2>Admin Fee</h2>
                         <div class="row">
                             <form method="POST" action="{{ route('Savecoursefee') }}">
@@ -459,7 +457,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button class="cancel-btn"type="button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                                        <button class="save-btn" type="submit">Save</button>
+                                        <button class="save-btn" type="submit">Edit Course Fee</button>
                                     </div>
                                 </div>
                             </form>

@@ -36,6 +36,13 @@
 ::-webkit-scrollbar-track {background: var(--scrollbarBG); } 
 ::-webkit-scrollbar-thumb {background-color: var(--thumbBG) ; border-radius: 6px; border: 3px solid var(--scrollbarBG); }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 
 * {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 html { text-rendering: optimizeLegibility !important;-webkit-font-smoothing: antialiased !important;}
@@ -68,21 +75,12 @@ h1, h2, h3, h4, h5, h6 {padding: 5px 0 15px 0;color: #455A64;-webkit-font-smooth
 
 
 
-.ro-modal button.btn-close {position: absolute; right: 15px; top: 15px; }
-
-.modal-content{
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   color: var(--bs-modal-color);
-   pointer-events: auto;
-   background-color: var(--gray);
-   background-clip: padding-box;
-   border: var(--bs-modal-border-width) solid var(--white);
-   border-radius: var(--bs-modal-border-radius);
-   outline: 0;
-}
+.ro-modal .modal-header {border: none; text-align: center; justify-content: center; }
+.ro-modal .modal-body h2 { font-size: 22px; font-weight: bold; color: var(--white); text-align: center; margin: 0 0 1rem 0; padding: 0;}
+.ro-modal .modal-body p { font-size: 15px; font-weight: bold; color: var(--white); text-align: center; }
+.ro-modal h5.modal-title {margin: 0; padding: 0; font-size: 20px; font-weight: bold; color: #6c7383; text-align: center;}
+.ro-modal .modal-content {border: none; background:var(--gray); border-radius: 8px; padding: 1rem;}
+.ro-modal button.close {position: absolute; right: 10px; top: 10px;    z-index: 1;background: #F75013;width: 30px;height: 30px;border-radius: 50px;border: none;color: #fff;font-size: 24px;}
 
 .no-record-found img{
    
