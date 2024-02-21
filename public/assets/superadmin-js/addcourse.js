@@ -824,7 +824,8 @@ $(document).on('click', '.addSurveyQuestion', function () {
     let id = ($(this).attr('id').split('-'))[1];
     questionSurveyCounter++;
     let oplength = $('.options .pmu-answer-option-list .hidden'+id+questionSurveyCounter).length;
-    var html = `<div class="pmu-edit-questionnaire-box">
+    var html = `<div class="survey-col">
+                <div class="pmu-edit-questionnaire-box">
                     <div class="pmu-edit-label">
                         <div class="pmu-q-badge">Q</div>
                     </div>
@@ -854,10 +855,18 @@ $(document).on('click', '.addSurveyQuestion', function () {
                         </div>
                     </div>
                 </div>
-                <button type="button" class="add-survey-option" id="addOption-${id}-${questionSurveyCounter}">Add Option</button>`;
-
+                <button type="button" class="add-survey-option" id="addOption-${id}-${questionSurveyCounter}">Add Option</button>
+                <button type="button" class="remove-new-survey-question" data-id="${id}">Remove Question</button> 
+            </div>`;
     $('.surveyQuestion-'+id).append(html);
-    
+});
+
+$(document).on('click', '.remove-new-survey-question', function () {
+    $(this).closest('.survey-col').remove();
+    let id = $(this).attr('data-id');
+    let newAddQuestionSurvey = $(`#newinputSurveyListing${id} .survey-col`).length;
+    console.log(newAddQuestionSurvey);
+    if(newAddQuestionSurvey==0) $(".saveQuestionSurvey"+id).addClass('d-none');
 });
 
 // Add New input Form field(Append)

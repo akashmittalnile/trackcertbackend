@@ -784,7 +784,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button class="cancel-btn mx-2" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
-                                        <button class="save-btn" type="submit">Save</button>
+                                        <button class="save-btn" type="submit">Add Chapter</button>
                                     </div>
                                 </div>
                             </form>
@@ -813,7 +813,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button class="cancel-btn mx-2" data-bs-dismiss="modal" aria-label="Close" type="button">Cancel</button>
-                                        <button class="save-btn" type="submit">Save</button>
+                                        <button class="save-btn" type="submit">Edit Chapter</button>
                                     </div>
                                 </div>
                             </form>
@@ -941,7 +941,7 @@
         } */
 
         /* Style for the remove question button */
-        .remove-question, .remove-new-question-survey, .remove-new-question {
+        .remove-question, .remove-new-question-survey, .remove-new-question, .remove-new-survey-question {
             margin-top: 10px;
             /* Adjust the value as needed */
             background-color: #f44336;
@@ -953,7 +953,7 @@
         }
 
         .remove-question:hover {
-            background-color: #d32f2f;
+            background-color: #f44336;
         }
     </style>
 
