@@ -111,11 +111,11 @@
     <style>
         .trackallselect .form-control {
             position: relative;
-            padding: 8px;
+            padding: 12px;
             border: 1px solid #ef872d;
             color: #ef872d;
             box-shadow: 0px 8px 13px rgb(0 0 0 / 5%);
-            border-radius: 5px;
+            border-radius: 8px;
             outline: none;
             background: none;
             color-scheme: dark;

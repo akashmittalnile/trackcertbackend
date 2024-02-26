@@ -270,79 +270,61 @@ ul.pagination li.disabled a.page-link {color:var(--white);pointer-events: none;b
 }
 
 .notification-foot {
-
-   background: #e1edff;
-
+   background: var(--inputline);
+   color: var(--white);
    text-align: center;
-
    padding: 10px 15px;
-
    display: inline-block;
-
    width: 100%;
-
 }
 
 .notification-foot a{color:#28a745}
 
 .noti-dropdown .dropdown-menu-right{
-
    right: 0;
-
    left: inherit;
-
    border: none;
-
 }
-
-
-
-
 
 .notification-item {display: flex; padding: .75rem 1rem; }
 
 .notification-item:hover{background-color:#f4f6f9;}
 
-
-
 .notification-item-icon {
-
    width: 32px;
-
    height: 32px;
-
    line-height: 32px;
-
    background: #fce9e5;
-
    margin-right: 10px;
-
    text-align: center;
-
    border-radius: 50%;
-
    color: #fc4a26;
-
-}.notification-item-text {
-
+}
+.notification-item-text {
    flex: 1;
-
-}.notification-item-text h2 {
-
+}
+.notification-item-text h2 {
    font-size: 14px;
-
-   color: var(--yellowbtn);
-
+   color: var(--yellowbtn) !important;
    margin: 0 0 10px 0;color: #343a40;
-
    padding: 0;
-
-}.notification-item-text p {
-
+}
+.notification-item-text p {
    font-size: 12px;
-
-   color: #bcc4cf;
-
+   color: var(--white);
    margin: 0;
-
+}
+.notification-item-text p span {
+   font-size: 12px;
+   color: var(--smalltext);
+   margin: 0;
+}
+.notification-item:hover h2{
+   color: var(--black) !important;
+}
+.notification-item:hover p{
+   color: var(--yellowbtn) !important;
+}
+.notification-item:hover p span{
+   color: var(--black) !important;
 }

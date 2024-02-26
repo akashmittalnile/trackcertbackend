@@ -15,24 +15,17 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="auth-form-section">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="auth-form-card">
-                <div class="auth-form">
-                    <h2>Reset Password</h2>
-                    <p>Please enter your otp</p>
+                <div class="auth-form d-flex flex-column align-items-center">
+                    <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/superadmin-images/logo.svg') !!}" /></a>
+                    <p>Reset Password</p>
                     @include('layouts.partials.messages')
                     <div class="row">
                         <form method="post" action="{{ route('SA.reset_password.otp') }}" id="Form_Login">@csrf
                             <input name="email" type="hidden" value="{{ $email }}">
-                            <div class="row text-center mx-auto" style="width: 40%;">
+                            <div class="row text-center mx-auto" style="width: 85%;">
                                 <div class="col-md-3">
                                     <div class="form-group auth-form-group ">
                                         <input style="padding: 10px; width: 45px; font-size: 1.2rem;" class="form-controls inputstab" name="otp1" type="text" id="n0" maxlength="1" autocomplete="off" autofocus data-next="1" required>
@@ -59,7 +52,6 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group text-center">
-                                        <a class="becomeacreator-btn" href="{{ route('SA.LoginShow') }}">Cancel</a>
                                         <button type="submit" class="becomeacreator-btn">Submit</button>
                                     </div>
                                 </div>

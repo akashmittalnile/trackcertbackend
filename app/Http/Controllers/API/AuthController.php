@@ -273,7 +273,7 @@ class AuthController extends Controller
                         $now = Carbon::now();
                         $fivemin = date('Y-m-d H:i:s', strtotime($user->updated_at.'+5 mins'));
                         if($fivemin >= $now){
-                            return response()->json(['status' => true, 'message' => 'Verification successfully.']);
+                            return response()->json(['status' => true, 'message' => 'OTP verified succesfully.']);
                         }else{
                             $user->verification_code = null;
                             $user->save();

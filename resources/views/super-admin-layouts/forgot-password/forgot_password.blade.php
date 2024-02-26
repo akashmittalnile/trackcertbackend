@@ -15,19 +15,12 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="{!! assets('assets/website-images/logo-2.png') !!}" /></a>
-            </div>
-        </div>
-    </div>
     <div class="auth-form-section">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="auth-form-card">
-                <div class="auth-form">
-                    <h2>Forgot Password</h2>
-                    <p>Please enter your registered Email</p>
+                <div class="auth-form d-flex flex-column align-items-center">
+                    <a href="javascript:void(0)" class="mb-3"><img width="140" height="140" src="{!! assets('assets/superadmin-images/logo.svg') !!}" /></a>
+                    <p>Forgot Password</p>
                     @include('layouts.partials.messages')
                     <div class="row">
                         <form method="post" action="{{ route('SA.forgot_password.email') }}" id="Form_Login">
@@ -44,7 +37,6 @@
 
                             <div class="col-md-12">
                                 <div class="form-group text-center">
-                                    <a class="becomeacreator-btn" href="{{ route('SA.LoginShow') }}">Cancel</a>
                                     <button class="becomeacreator-btn" type="submit" id="LoginCheck">Submit</button>
                                 </div>
                             </div>

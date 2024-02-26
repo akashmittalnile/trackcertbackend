@@ -49,7 +49,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group text-center">
-                                    <a class="ForgotPassword-text" href="{{ route('SA.forgot.password') }}">Forgot Password?</a>
+                                    <a target="_blank" class="ForgotPassword-text" href="{{ route('SA.forgot.password') }}">Forgot Password?</a>
                                 </div>
                             </div>
                         </form>
