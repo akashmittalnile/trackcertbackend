@@ -1588,10 +1588,10 @@ class ApiController extends Controller
             if ($u_id) {
                 $old_password = $request->current_password;
                 $new_password = $request->new_password;
-                $datas = User::where('id', $u_id)->first();
+                $datas = User::where('id', auth()->user()->id)->first();
                 $u_password = $datas->password;
                 if (Hash::check($old_password, $u_password)) {
-                    $updatedata = array('password' => bcrypt($new_password));
+                    $updatedata = array('password' => Hash::make($new_password));
                     $id = User::where('id', $u_id)->update($updatedata);
                     if ($id) {
                         $notify = new Notify;

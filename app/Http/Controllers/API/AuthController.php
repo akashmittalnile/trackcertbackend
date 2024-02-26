@@ -163,37 +163,40 @@ class AuthController extends Controller
                     'message' => 'New password cannot same as old password.',
                 ], 200);
             } else {
-                $user->password = bcrypt($request->password);
-                $user->verification_code = null;
-                $user->updated_at = null;
-                if ($user->save()) {
-                    $notify = new Notify;
-                    $notify->added_by = $user_login_source->id;
-                    $notify->user_id = $user_login_source->id;
-                    $notify->module_name = 'password';
-                    $notify->title = 'Password Reset Successfully';
-                    $notify->message = 'Hello, ' . $user_login_source->first_name . "\nYour password has been reset successfully.";
-                    if($user_login_source->profile_image == "" || $user_login_source->profile_image == null){
-                        $profile_image = null;
-                    } else $profile_image = uploadAssets('upload/profile-image/'.$user_login_source->profile_image);
-                    $notify->image = $profile_image;
-                    $notify->is_seen = '0';
-                    $notify->redirect_url = null;
-                    $notify->created_at = date('Y-m-d H:i:s');
-                    $notify->updated_at = date('Y-m-d H:i:s');
-                    $notify->save();
 
-                    $data = array(
-                        'msg' => 'Hello, ' . $user_login_source->first_name . "\nYour password has been reset successfully.",
-                        'title' => 'Password Reset Successfully'
-                    );
-                    sendNotification($user_login_source->fcm_token ?? "", $data);
+                User::where('id', $user->id)->update([
+                    'password' => Hash::make($request->password),
+                    'verification_code' => null,
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
 
-                    return response()->json([
-                        'status' => true,
-                        'message' => 'Password reset successfully.'
-                    ]);
-                }
+                $notify = new Notify;
+                $notify->added_by = $user_login_source->id;
+                $notify->user_id = $user_login_source->id;
+                $notify->module_name = 'password';
+                $notify->title = 'Password Reset Successfully';
+                $notify->message = 'Hello, ' . $user_login_source->first_name . "\nYour password has been reset successfully.";
+                if($user_login_source->profile_image == "" || $user_login_source->profile_image == null){
+                    $profile_image = null;
+                } else $profile_image = uploadAssets('upload/profile-image/'.$user_login_source->profile_image);
+                $notify->image = $profile_image;
+                $notify->is_seen = '0';
+                $notify->redirect_url = null;
+                $notify->created_at = date('Y-m-d H:i:s');
+                $notify->updated_at = date('Y-m-d H:i:s');
+                $notify->save();
+
+                $data = array(
+                    'msg' => 'Hello, ' . $user_login_source->first_name . "\nYour password has been reset successfully.",
+                    'title' => 'Password Reset Successfully'
+                );
+                sendNotification($user_login_source->fcm_token ?? "", $data);
+
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Password reset successfully.'
+                ]);
+                
             }
         } else return response()->json([
             'status' => false,
