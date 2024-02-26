@@ -31,6 +31,9 @@
     .course-player-quiz-choice-text{
         color: #8C9AA1 !important;
     }
+    .toast.toast-success {
+        background-color: #f28520 !important;
+    }
 </style>
 <div class="course-player-quiz">
     <div class="course-player-quiz-inner">

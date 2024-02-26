@@ -1252,7 +1252,7 @@
                         contentType: false,
                         processData: false,
                         beforeSend : function(){
-                            toastr.info('PDF form submitted');
+                            toastr.success('PDF form submitted');
                         },
                         success : function(response){
                             if(response.status==201){
@@ -1286,7 +1286,7 @@
                         contentType: false,
                         processData: false,
                         beforeSend : function(){
-                            toastr.info('Video form submitted');
+                            toastr.success('Video form submitted');
                         },
                         success : function(response){
                             if(response.status==201){
@@ -1321,7 +1321,7 @@
                         contentType: false,
                         processData: false,
                         beforeSend : function(){
-                            toastr.info('Quiz form submitted');
+                            toastr.success('Quiz form submitted');
                         },
                         success : function(response){
                             if(response.status==201){
@@ -1362,7 +1362,7 @@
                         contentType: false,
                         processData: false,
                         beforeSend : function(){
-                            toastr.info('Survey form submitted');
+                            toastr.success('Survey form submitted');
                         },
                         success : function(response){
                             if(response.status==201){
@@ -1392,7 +1392,7 @@
                     contentType: false,
                     processData: false,
                     beforeSend : function(){
-                        toastr.info('Assignment form submitted');
+                        toastr.success('Assignment form submitted');
                     },
                     success : function(response){
                         if(response.status==201){

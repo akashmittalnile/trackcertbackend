@@ -273,7 +273,7 @@ $(document).on('change', '.answerEditCheckbox', function () {
             if (data.status == 200) {
                 toastr.success(data.message);
             } else if (data.status == 201) {
-                toastr.warning(data.message);
+                toastr.error(data.message);
                 setInterval(function () {location.reload();}, 3000);
             }
         }
@@ -798,7 +798,7 @@ $(document).ready(function () {
             contentType: false,
             processData: false,
             beforeSend: function () {
-                toastr.info('Form submitted.');
+                toastr.success('Form submitted.');
             },
             success: function (response) {
                 if (response.status == 201) {

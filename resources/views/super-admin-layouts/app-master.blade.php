@@ -12,6 +12,12 @@
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/line-awesome/css/line-awesome.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/superadmin-css/header-footer.css') !!}">
     
+    <style>
+        .toast.toast-success {
+            background-color: #f28520 !important;
+        }
+    </style>
+    
     @stack('css')
 
     @if ($currentURL == 'SA.Dashboard')
