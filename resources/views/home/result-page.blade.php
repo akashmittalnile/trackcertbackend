@@ -18,8 +18,9 @@
     <style type="text/css">
         .quiz-results-section {
             position: relative;
-            background: #261313;
+            background: #1e1e1e;
             padding: 2rem;
+            height: 100vh;
         }
 
         .quiz-results-chart {
@@ -33,7 +34,7 @@
         }
 
         .quiz-results-content h3 {
-            color: #FFF;
+            color: #e27d20;
             text-align: center;
             font-family: League Spartan;
             font-size: 30px;
@@ -46,7 +47,7 @@
         }
 
         .quiz-results-content p {
-            color: #FFF;
+            color: #8C9AA1;
             text-align: center;
             font-family: League Spartan;
             font-size: 20px;
@@ -58,7 +59,7 @@
 
         .quizcircle {
             border-radius: 50%;
-            background-color: #653C3C;
+            background-color: #e27d20;
             width: 150px;
             height: 150px;
             position: absolute;
@@ -124,8 +125,8 @@
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            border: 1px solid var(--gray, #ECECEC);
-            background: var(--white, #FFF);
+            border: 1px solid #3e3c3c;
+            background: #3e3c3c;
             position: relative;margin-bottom: 10px;
         }
 
@@ -144,7 +145,7 @@
 
 
         .quiz-results-card p {
-            color: var(--gray-gray-600, #505667);
+            color: #ffffff;
             font-family: League Spartan;
             font-size: 14px;
             font-style: normal;
@@ -172,24 +173,8 @@
         }
 
         a.Retakebtn {
-            border-radius: 5px;
-            background: var(--white, #FFF);
-            box-shadow: 0px 4px 12px 0px rgba(182, 0, 248, 0.06);
-            color: var(--Brown, #261313);
-            text-align: center;
-            font-family: League Spartan;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            text-transform: uppercase;
-            padding: 15px 30px;
-            display: inline-block;
+            border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; 
         }
-
-
-
-
 
         .becomeacreator-form-info {
             position: relative;
@@ -250,10 +235,10 @@
         <div class="continer">
             <div class="quiz-results-content">
                 @if( number_format((float)(($obtained * 100) / $total), 1) >= $passingPercentage )
-                <h3>Hurry!</h3>
+                <h3>Hurry !</h3>
                 <p>You passed this quiz with a score of</p>
                 @else
-                <h3>Whoops!</h3>
+                <h3>Whoops !</h3>
                 <p>You failed this quiz with a score of</p>
                 @endif
 
@@ -274,8 +259,8 @@
 
 
             </div>
-            <div class="quiz-results-section">
-                <div class="row">
+            <div class="quiz-results-section2" style="padding: 20px 0px;">
+                <div class="row" style="width: 102%;">
                     <div class="col-md-3">
                         <div class="quiz-results-card">
                             <h3>{{ $totalQuestion ?? 0 }}</h3>

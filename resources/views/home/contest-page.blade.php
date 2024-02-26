@@ -8,6 +8,30 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+<style>
+    body{
+        background-color: #1e1e1e !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .course-player-quiz-inner h3{
+        color: #e27d20 !important;
+        font-size: 1.3rem !important;
+    }
+    .course-player-quiz-question h4{
+        color: #ffffff !important;
+    }
+    .course-player-quiz-choice-label{
+        background-color: #000 !important;
+        color: #8C9AA1 !important;
+    }
+    .course-player-quiz-choice-checkbox {
+        border: 2px solid #3e3c3c !important; 
+    }
+    .course-player-quiz-choice-text{
+        color: #8C9AA1 !important;
+    }
+</style>
 <div class="course-player-quiz">
     <div class="course-player-quiz-inner">
         <h3 id="question">QUESTION 1 OF {{ $questionCount }}</h3>
@@ -158,16 +182,16 @@ body{background-color: #fdf6ff; font-family: 'Source Sans 3', sans-serif;}
 .course-player-quiz-radio input[type="radio"] + label::after {-webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); }
 .course-player-quiz-radio input[type="radio"]:checked + label::after {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
 
-.course-player-quiz-radio input[type="radio"]:hover + label .course-player-quiz-choice-checkbox{border-color: #e0b220; }
+.course-player-quiz-radio input[type="radio"]:hover + label .course-player-quiz-choice-checkbox{border-color: #e27d20 ; }
 
-.course-player-quiz-radio input[type="radio"]:checked + label .course-player-quiz-choice-checkbox{border-color: #e0b220; outline-offset: -2px; outline-style: solid; outline-width: 1px; outline-color: #e0b220; }
+.course-player-quiz-radio input[type="radio"]:checked + label .course-player-quiz-choice-checkbox{border-color: #ffffff; outline-offset: -2px; outline-style: solid; outline-width: 1px; outline-color: #ffffff; }
 
-.course-player-quiz-radio input[type="radio"]:checked + label .course-player-quiz-choice-checkbox .course-player-quiz-choice-label{background-color: #e0b220;color: #fff;}
+.course-player-quiz-radio input[type="radio"]:checked + label .course-player-quiz-choice-checkbox .course-player-quiz-choice-label{background-color: #ffffff;color: #fff;}
 
 
 .course-player-footer-action {text-align: right; padding-top: 24px; }
-button.Confirm-btn {display: inline-block; border-radius: 4px; cursor: pointer; border: 0; font-size: .875rem; line-height: 1.5rem; min-height: 40px; background-color: #261313; color: #fff; text-align: center; padding: 8px 16px; text-transform: uppercase; font-weight: 600; }
-a.Confirm-btn {display: inline-block; border-radius: 4px; cursor: pointer; border: 0; font-size: .875rem; line-height: 1.5rem; min-height: 40px; background-color: #261313; color: #fff; text-align: center; padding: 8px 16px; text-transform: uppercase; font-weight: 600; }
+button.Confirm-btn {border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; }
+a.Confirm-btn {border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; }
 .course-player-quiz-explanation {margin:25px 0 0; padding: 24px; border-color: #261313; border-width: 1px; border-radius: 2px; border-style: solid; font-size: 1rem; font-weight: 600; line-height: 1.5rem; }
 
 .correctanswer-msg{color: #4caf50; }

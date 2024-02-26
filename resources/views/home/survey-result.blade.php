@@ -17,14 +17,14 @@
 
     <style type="text/css">
         .quiz-results-section {
-    position: relative;
-    background: #261313;
-    padding: 2rem;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            position: relative;
+            background: #1e1e1e;
+            padding: 2rem;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .quiz-results-chart {
             width: 100%;
             height: 275px;
@@ -35,8 +35,16 @@
             position: relative;
         }
 
+        .quiz-results-content .image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         .quiz-results-content h3 {
-            color: #FFF;
+            color: #e27d20;
             text-align: center;
             font-family: League Spartan;
             font-size: 30px;
@@ -44,7 +52,7 @@
             font-weight: 600;
             line-height: 100%;
             letter-spacing: -0.3px;
-            margin: 0;
+            margin: 10px 0;
             padding: 0;
         }
 
@@ -175,19 +183,7 @@
         }
 
         a.Retakebtn {
-            border-radius: 5px;
-            background: var(--white, #FFF);
-            box-shadow: 0px 4px 12px 0px rgba(182, 0, 248, 0.06);
-            color: var(--Brown, #261313);
-            text-align: center;
-            font-family: League Spartan;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            text-transform: uppercase;
-            padding: 15px 30px;
-            display: inline-block;
+            border-radius: 5px; background: var(--yellowbtn, #261313); padding: 15px 20px; color: var(--white, #FFF); text-align: center; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; text-transform: uppercase;border: none; display: inline-block; position: relative; outline: none; 
         }
 
 
@@ -252,7 +248,10 @@
     <div class="quiz-results-section">
         <div class="continer">
             <div class="quiz-results-content">
-                <h3>Thank you</h3>
+                <div class="image">
+                    <img src="{{ assets('assets/website-images/happy.png') }}" width="100" alt="">
+                </div>
+                <h3>Thank you !</h3>
                 <p>We are so grateful for your answers! This will guide us in creating a better experience for you.</p>
 
             </div>
