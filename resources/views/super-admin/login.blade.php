@@ -69,7 +69,7 @@
 <script>
     $(document).ready(function() {
         $.validator.addMethod("emailValidate", function(value) {
-            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value.trim());
         }, 'Please enter valid email address.');
 
         $('#arkansas_login_form').validate({
