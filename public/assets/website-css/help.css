@@ -28,10 +28,10 @@ input#exampleFormControlInput2{
     font-size: 14px;
 }
 
-.input-group input, #message-input{
-    border: 1px solid #000;
+.input-group input, #message-input, #myinput{
     background: var(--gray);
     border: 1px solid var(--inputline) !important;
+    color: #ffffff;
 }
 
 .input-group-text {
