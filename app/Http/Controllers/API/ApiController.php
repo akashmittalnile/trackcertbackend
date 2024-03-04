@@ -1798,21 +1798,25 @@ class ApiController extends Controller
                 $tax = Setting::where('attribute_code','tax')->first();
                 $shopping_cart = AddToCart::where('userid', auth()->user()->id)->where('object_type', 1)->get();
                 if(count($shopping_cart)>0){
-                    $cart_value = AddToCart::where('userid', $user_id)->where('object_type', 1)->sum(\DB::raw('cart_value * quantity'));
+                    
                     $cart_count = cartCount();
                     $discount = 0;
+                    $cart_value = 0;
                     foreach($shopping_cart as $cart){
                         $coupon = Coupon::where('object_type', 1)->where('object_id', $cart->object_id)->where('id', $cart->coupon_id)->first();
+                        $cou = Course::where('id', $cart->object_id)->first();
                         if(isset($coupon->id)){
-                            $discount += (($cart->cart_value*$coupon->coupon_discount_amount)/100); 
+                            $discount += (($cou->course_fee*$coupon->coupon_discount_amount)/100); 
                         }
+                        $cart_value += $cou->course_fee ?? 0;
                     }
                     $total_amount = ($cart_value);
                     if(isset($tax->id) && $tax->attribute_value != '' && $tax->attribute_value != 0)
                         $tax_amount = ($total_amount*$tax->attribute_value)/100;
                     else $tax_amount = 0;
                     $ship_price = 0;
-                    $cart_value = $cart_value+$discount;
+                    $cart_value = $cart_value;
+                    $total_amount = $total_amount - $discount;
                     $type = 1;
                 }else{
                     $cart = TempData::where('user_id', auth()->user()->id)->where('type', 'cart')->first();
