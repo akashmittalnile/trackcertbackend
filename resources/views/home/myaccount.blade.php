@@ -53,8 +53,8 @@
                                     <input type="text" maxlength="12" class="form-control phone" name="phone" placeholder="Phone" value="{{ $user->phone }}">
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
+                            <input type="hidden" name="CreatorType" value="1">
+                            <!-- <div class="col-md-6">
                                 <div class="form-group">
                                     <h4>Please Select Creator Type!</h4>
                                     <div class="row">
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -345,9 +345,6 @@
                     phoneValidate: true,
                     minlength: 8,
                 },
-                CreatorType: {
-                    required: true,
-                },
                 bus_name: {
                     required: true,
                 },
@@ -367,9 +364,6 @@
             messages: {
                 first_name: {
                     required: 'Please enter first name',
-                },
-                CreatorType: {
-                    required: 'Please select creator type',
                 },
                 phone: {
                     required: 'Please enter phone number',

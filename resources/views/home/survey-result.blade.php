@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arkanasas</title>
+    <title>Track Cert - Survey Result</title>
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/header-footer.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-plugins/iconsax/iconsax.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! assets('assets/website-css/auth.css') !!}">

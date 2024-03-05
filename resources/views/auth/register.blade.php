@@ -50,7 +50,8 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <input type="hidden" name="CreatorType" value="1">
+                            <!-- <div class="col-md-12">
                                 <div class="form-group">
                                     <h4>Please Select Creator Type!</h4>
                                     <div class="row">
@@ -72,7 +73,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" placeholder="Create Password" required>
@@ -193,9 +194,6 @@
                 last_name: {
                     required: true,
                 },
-                CreatorType: {
-                    required: true,
-                },
                 terms_conditions: {
                     required: true,
                 },
@@ -236,9 +234,6 @@
                 },
                 last_name: {
                     required: 'Please enter last name',
-                },
-                CreatorType: {
-                    required: 'Please select creator type',
                 },
                 terms_conditions: {
                     required: 'Please accept terms & condition',

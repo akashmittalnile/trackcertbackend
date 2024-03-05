@@ -65,9 +65,9 @@
                                     <h2 class="text-capitalize">{{ $user->first_name ?? "NA" }} {{ $user->last_name ?? "" }}</h2>
                                     <p>
                                         @if ($user->CreatorType == 1)
-                                            Permanent Makeup Training
+                                            Track Cert Training
                                         @else
-                                            Tattooing & Piercing Institute
+                                            Track Cert Training
                                         @endif
                                     </p>
                                 </div>
