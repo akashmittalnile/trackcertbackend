@@ -20,7 +20,7 @@
             position: relative;
             background: #1e1e1e;
             padding: 2rem;
-            height: 100vh;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;

@@ -495,7 +495,7 @@ class ApiController extends Controller
             if ($limit == 0) {
                 $course->limit(2);
             }
-            $course = $course->select('course.id', 'course.admin_id','course.title', 'course.description', 'course.course_fee', 'course.tags', 'course.valid_upto', 'course.certificates', 'course.introduction_image', 'course.created_date', 'u.first_name', 'u.last_name', 'u.category_name', 'c.name as catname', 'c.id as catid', 'u.profile_image', 'u.status as cc_status')->paginate(4);
+            $course = $course->select('course.id', 'course.admin_id','course.title', 'course.description', 'course.course_fee', 'course.tags', 'course.valid_upto', 'course.certificates', 'course.introduction_image', 'course.created_date', 'u.first_name', 'u.last_name', 'u.category_name', 'c.name as catname', 'c.id as catid', 'u.profile_image', 'u.status as cc_status')->paginate(10);
 
             $response = array();
             if (isset($course)) {
